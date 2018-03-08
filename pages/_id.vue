@@ -1,13 +1,15 @@
 <template>
   <div>
-    <div v-html="readmeContent" class="markdown-body"></div>
+    <div class="page-inner">
+      <div v-html="readmeContent" class="markdown-body"></div>
+    </div>
   </div>
 </template>
 
 <script>
   import marked from 'marked'
   import base64 from 'base-64'
-
+  import utf8 from 'utf8'
   export default {
     async created () {
       const { id } = this.$route.params
@@ -33,7 +35,9 @@
       },
       readmeContent () {
         if (!this.repository) return ''
-        return marked(base64.decode(this.repository.readme.content))
+        const bytes = base64.decode(this.repository.readme.content)
+        const text = utf8.decode(bytes)
+        return marked(text)
       }
     }
   }
