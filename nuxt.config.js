@@ -25,7 +25,7 @@ module.exports = {
   */
   mode:'spa',
   build: {
-    vendor:['axios','rss-parser'],
+    vendor:['axios'],
     /*
     ** Run ESLint on save
     */

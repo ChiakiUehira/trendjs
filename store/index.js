@@ -1,30 +1,50 @@
 import axios from 'axios'
 
 export const state = () => ({
-  feed: [],
-  repository: {},
-  readme: {}
+  daily: [],
+  weekly: [],
+  monthly: [],
+  repositories: [],
+  repository: null,
 })
 
 export const mutations = {
-  SET_FEED (state, feed) {
-    state.feed = feed
+  SET_DAILY (state, repositories) {
+    state.daily = repositories
   },
-  SET_REPOSITORY(state, repository){
+  SET_WEEKLY (state, repositories) {
+    state.weekly = repositories
+  },
+  SET_MONTHLY (state, repositories) {
+    state.monthly = repositories
+  },
+  SET_REPOSITORY (state, repository) {
     state.repository = repository
   },
-  SET_README(state, readme){
-    state.readme = readme
-  }
+  PUSH_REPOSITORY (state, repository) {
+    state.repositories.push(repository)
+  },
 }
 
 export const actions = {
-  async fetchRepository ({commit}, payload) {
-    const {data} = await axios.get(`https://api.github.com/repos/${payload.owner}/${payload.repo}`)
-    commit('SET_REPOSITORY', data)
+  async fetchDaily ({commit}) {
+    const res = await axios.get('https://us-central1-trendjs-4830c.cloudfunctions.net/trends/')
+    commit('SET_DAILY', res.data)
   },
-  async fetchReadMe({commit}, payload){
-    const {data}  = await axios.get(`https://api.github.com/repos/${payload.owner}/${payload.repo}/readme`)
-    commit('SET_README', data)
+  async fetchWeekly ({commit}) {
+    const res = await axios.get('https://us-central1-trendjs-4830c.cloudfunctions.net/trends/?since=weekly')
+    commit('SET_WEEKLY', res.data)
+  },
+  async fetchMonthly ({commit}) {
+    const res = await axios.get('https://us-central1-trendjs-4830c.cloudfunctions.net/trends/?since=monthly')
+    commit('SET_MONTHLY', res.data)
+  },
+  async fetchRepository ({commit}, {author, name}) {
+    const res = await axios.get(`https://api.github.com/repos/${author}/${name}`)
+    return res.data
+  },
+  async fetchReadMe ({commit}, {author, name}){
+    const res  = await axios.get(`https://api.github.com/repos/${author}/${name}/readme`)
+    return res.data
   }
 }

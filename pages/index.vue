@@ -2,8 +2,8 @@
   <section class="container">
     <div>
       <ul>
-        <li v-for="(item,index) in feed" :key="item.title">
-          <nuxt-link :to="`${index}`">{{item.title}}</nuxt-link>
+        <li v-for="repo in daily" :key="repo.title">
+          <nuxt-link :to="`${repo.author}@${repo.name}`">{{repo.name}}</nuxt-link>
         </li>
       </ul>
     </div>
@@ -11,16 +11,15 @@
 </template>
 
 <script>
-  import axios from 'axios'
-
   export default {
-    async beforeCreate(){
-      const {data} = await axios.get('http://localhost:3232/feed')
-      this.$store.commit('SET_FEED', data.feed.items)
+    async created () {
+      if (!this.daily.length) {
+        this.$store.dispatch('fetchDaily')
+      }
     },
     computed: {
-      feed(){
-        return this.$store.state.feed
+      daily () {
+        return this.$store.state.daily
       }
     }
   }
