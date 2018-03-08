@@ -2,32 +2,26 @@
   <section class="container">
     <div>
       <ul>
-        <li v-for="trend in trends.items" :key="trend.title">{{trend.link}}</li>
+        <li v-for="(item,index) in feed" :key="item.title">
+          <nuxt-link :to="`${index}`">{{item.title}}</nuxt-link>
+        </li>
       </ul>
     </div>
   </section>
 </template>
 
 <script>
-  import Parser from 'rss-parser'
   import axios from 'axios'
 
   export default {
-    async asyncData(){
-      const parser = new Parser()
-      let trends = []
-      const feed = await parser.parseURL('http://github-trends.ryotarai.info/rss/github_trends_javascript_daily.rss')
-
-      feed.items.forEach(async (item) => {
-        const owner = item.link.split('/')[item.link.split('/').length - 2]
-        const repo = item.link.split('/')[item.link.split('/').length - 1]
-        const request = `https://api.github.com/repos/${owner}/${repo}`
-
-        const data = await axios.get(request)
-        trends.push({trend: data})
-      })
-
-      return {trends}
+    async beforeCreate(){
+      const {data} = await axios.get('http://localhost:3232/feed')
+      this.$store.commit('SET_FEED', data.feed.items)
+    },
+    computed: {
+      feed(){
+        return this.$store.state.feed
+      }
     }
   }
 </script>

@@ -13,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    'github-markdown-css/github-markdown.css'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -20,6 +23,7 @@ module.exports = {
   /*
   ** Build configuration
   */
+  mode:'spa',
   build: {
     vendor:['axios','rss-parser'],
     /*
