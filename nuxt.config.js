@@ -21,6 +21,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor:['axios','rss-parser'],
     /*
     ** Run ESLint on save
     */
