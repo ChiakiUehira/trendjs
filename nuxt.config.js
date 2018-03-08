@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'trendjs',
+    title: 'Trend.js',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -16,10 +16,49 @@ module.exports = {
   css: [
     'github-markdown-css/github-markdown.css'
   ],
+  modules: [
+    '@nuxtjs/pwa',
+  ],
+  head: {
+    title: 'Trend.js',
+    meta: [
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '' },
+      { name: 'twitter:title', content: 'Trend.js' },
+      { name: 'twitter:description', content: 'Provide JavaScript trends based on GitHub' },
+      { name: 'twitter:image', content: '' },
+      { name: 'twitter:image:alt', content: 'Trend.js Logo' },
+
+      { name: 'og:title', content: 'Trend.js' },
+      { name: 'og:description', content: 'Provide JavaScript trends based on GitHub' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:url', content: '' },
+      { name: 'og:image', content: '' }
+    ],
+  },
+  meta: {
+    mobileAppIOS: true,
+    viewport: 'width=device-width, initial-scale=1, user-scalable=no',
+    name: 'Trend.js',
+    description: 'Provide JavaScript trends based on GitHub',
+    theme_color: '#000',
+    lang: 'ja'
+  },
+  manifest: {
+    name: 'Trend.js',
+    short_name: 'Trend.js',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#000',
+    description: 'Provide JavaScript trends based on GitHub'
+  },
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: {
+    color: '#3B8070',
+    height: '0px'
+  },
   /*
   ** Build configuration
   */
