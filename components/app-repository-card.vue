@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .repository-card {
-  box-shadow: 0px 0px 4px 0px #959595;
+  box-shadow: 0px 0px 4px 0px #d0d0d0;
   margin-bottom: 15px;
   border-radius: 5px;
 }

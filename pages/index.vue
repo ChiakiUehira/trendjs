@@ -14,12 +14,18 @@
     },
     async created () {
       if (!this.daily.length) {
-        this.$store.dispatch('fetchDaily')
+        await this.$store.dispatch('fetchDaily')
+      }
+      if (this.isLoading) {
+        this.$store.commit('SET_IS_LOADING', false)
       }
     },
     computed: {
       daily () {
         return this.$store.state.daily
+      },
+      isLoading () {
+        return this.$store.state.isLoading
       }
     }
   }

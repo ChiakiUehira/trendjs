@@ -1,8 +1,19 @@
 <template>
   <div class="app">
+    <app-intro />
     <nuxt/>
   </div>
 </template>
+
+<script>
+import appIntro from '~/components/app-intro'
+export default {
+  components: {
+    appIntro
+  }
+}
+</script>
+
 
 <style scoped>
 .app {

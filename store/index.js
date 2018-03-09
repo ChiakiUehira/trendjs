@@ -6,9 +6,13 @@ export const state = () => ({
   monthly: [],
   repositories: [],
   repository: null,
+  isLoading: true,
 })
 
 export const mutations = {
+  SET_IS_LOADING (state, flag) {
+    state.isLoading = flag
+  },
   SET_DAILY (state, repositories) {
     state.daily = repositories
   },
