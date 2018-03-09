@@ -46,7 +46,7 @@
   }
 </script>
 
-<style scoped>
+<style>
 .markdown-body video {
   width: 100%;
 }
