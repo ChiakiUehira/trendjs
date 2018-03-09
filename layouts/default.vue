@@ -15,11 +15,10 @@ export default {
   },
   methods: {
     onSwipeLeft () {
-      console.log(this.$router);
-      // this.$router.go(-1)
+      this.$router.go(1)
     },
     onSwipeRight () {
-      this.$router.go(1)
+      this.$router.go(-1)
     }
   },
 }
