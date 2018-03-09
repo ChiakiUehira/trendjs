@@ -42,6 +42,11 @@ html {
 body {
   background-color: #f3f3f3;
 }
+@media screen and (max-width: 600px){
+  body {
+    background-color: #fff;
+  }
+}
 .page-inner {
   padding: 0 20px;
 }
