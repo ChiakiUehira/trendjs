@@ -1,7 +1,9 @@
 <template>
   <div class="root">
     <div class="page-inner">
-      <app-repository-card v-for="repository in daily" :key="repository.id" :repository="repository" />
+      <div class="repositories">
+        <app-repository-card v-for="repository in daily" :key="repository.id" :repository="repository" />
+      </div>
     </div>
   </div>
 </template>
@@ -30,3 +32,10 @@
     }
   }
 </script>
+
+<style scoped>
+.repositories {
+  padding: 60px 0;
+}
+</style>
+

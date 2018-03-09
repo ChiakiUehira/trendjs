@@ -18,13 +18,14 @@
         return repository.author === author && repository.name === name
       })
       if (repository) {
-        return this.$store.commit('SET_REPOSITORY', repository)
+        this.$store.commit('SET_REPOSITORY', repository)
       } else {
         const repository = await this.$store.dispatch('fetchRepository', {author, name})
         const readme = await this.$store.dispatch('fetchReadMe', {author, name})
         this.$store.commit('PUSH_REPOSITORY', {author, name, repository, readme})
-        return this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
+        this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
       }
+      this.$store.commit('SET_IS_LOADING', false)
     },
     computed: {
       repositories () {
@@ -42,3 +43,9 @@
     }
   }
 </script>
+
+<style scoped>
+.markdown-body video {
+  width: 100%;
+}
+</style>
