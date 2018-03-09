@@ -52,6 +52,9 @@ module.exports = {
     background_color: '#000',
     description: 'Provide JavaScript trends based on GitHub'
   },
+  plugins: [
+    '~/plugins/touch.js'
+  ],
   /*
   ** Customize the progress bar color
   */
