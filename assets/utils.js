@@ -1,6 +1,6 @@
 
-export const optimizeGitHubLink = (html, author, name) => {
-  const prefix = `https://github.com/${author}/${name}/blob/master/`
+export const optimizeGitHubLink = (html, author, name, branch) => {
+  const prefix = `https://github.com/${author}/${name}/blob/${branch}/`
   const suffix = '?raw=true'
   const dom = document.createElement('div')
   dom.innerHTML = html

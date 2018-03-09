@@ -42,7 +42,7 @@
         const bytes = base64.decode(this.repository.readme.content)
         const text = utf8.decode(bytes)
         const html = marked(text)
-        return optimizeGitHubLink(html, this.repository.author, this.repository.name)
+        return optimizeGitHubLink(html, this.repository.author, this.repository.name, this.repository.repository.default_branch)
       }
     }
   }
