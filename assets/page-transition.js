@@ -1,6 +1,11 @@
 
 export default (to, from) => {
-  const fromLen = [...new Set(from.fullPath.split('/'))].length
-  const toLen = [...new Set(to.fullPath.split('/'))].length
-  return +fromLen < +toLen ? 'slide-left' : 'slide-right'
+  if (to && from) {
+    const fromLen = [...new Set(from.fullPath.split('/'))].length
+    const toLen = [...new Set(to.fullPath.split('/'))].length
+    return fromLen === toLen ? 'fade-in'
+      : fromLen < toLen ? 'slide-left'
+      : 'slide-right'
+  }
+  return ''
 }
