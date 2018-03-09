@@ -1,7 +1,9 @@
 <template>
   <transition name="fade">
     <div v-if="isLoading" class="root">
-      loading
+      <div class="logo">
+        <img src="/logo.svg">
+      </div>
     </div>
   </transition>
 </template>
@@ -31,6 +33,12 @@ export default {
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
 
