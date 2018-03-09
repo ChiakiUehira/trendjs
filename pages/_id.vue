@@ -11,6 +11,10 @@
   import base64 from 'base-64'
   import utf8 from 'utf8'
   export default {
+    transition(to, from) {
+      if (!from) return 'slide-left'
+      return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+    },
     async created () {
       const { id } = this.$route.params
       const [author, name] = id.split('@')

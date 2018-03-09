@@ -45,4 +45,14 @@ body {
 .page-inner {
   padding: 0 20px;
 }
+.slide-left-enter,
+.slide-right-leave-active {
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+  transform: translateX(100%);
+}
+.slide-left-leave-active,
+.slide-right-enter {
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+  transform: translateX(-100%);
+}
 </style>
