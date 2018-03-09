@@ -9,12 +9,10 @@
 </template>
 
 <script>
+  import transition from '~/assets/page-transition'
   import appRepositoryCard from '~/components/app-repository-card'
   export default {
-    transition(to, from) {
-      if (!from) return 'slide-left'
-      return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-    },
+    transition,
     components: {
       appRepositoryCard
     },
