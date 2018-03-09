@@ -7,6 +7,7 @@
 </template>
 
 <script>
+  import { optimizeGitHubLink } from '~/assets/utils'
   import transition from '~/assets/page-transition'
   import marked from 'marked'
   import base64 from 'base-64'
@@ -40,7 +41,8 @@
         if (!this.repository) return ''
         const bytes = base64.decode(this.repository.readme.content)
         const text = utf8.decode(bytes)
-        return marked(text)
+        const html = marked(text)
+        return optimizeGitHubLink(html, this.repository.author, this.repository.name)
       }
     }
   }
