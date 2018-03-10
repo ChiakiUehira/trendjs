@@ -1,13 +1,15 @@
 <template>
   <div>
     <div class="page-inner">
-      <div class="div">
-        {{repository.author}} / {{repository.name}}
-      </div>
-      <div class="discription">
-        {{repository.discription}}
-      </div>
-      <div v-html="readmeContent" class="markdown-body"></div>
+      <v-touch @swipeleft="onSwipeLeft">
+        <div class="div">
+          {{repository.author}} / {{repository.name}}
+        </div>
+        <div class="discription">
+          {{repository.discription}}
+        </div>
+        <div v-html="readmeContent" class="markdown-body"></div>
+      </v-touch>
     </div>
   </div>
 </template>
@@ -35,6 +37,11 @@
         this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
       }
       this.$store.commit('SET_IS_LOADING', false)
+    },
+    methods: {
+      onSwipeLeft () {
+        this.$route.go(-1)
+      },
     },
     computed: {
       repositories () {
