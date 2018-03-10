@@ -12,7 +12,7 @@ export const state = () => ({
     'daily',
     'weekly',
     'monthly'
-  ]
+  ],
 })
 
 export const mutations = {

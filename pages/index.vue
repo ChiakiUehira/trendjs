@@ -3,7 +3,12 @@
     <div class="page-inner">
       <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight">
         <div class="repositories">
-          <app-repository-card v-for="repository in trends" :key="repository.id" :repository="repository" />
+          <div v-if="trends.length">
+            <app-repository-card v-for="repository in trends" :key="repository.id" :repository="repository" />
+          </div>
+          <div v-else>
+            <app-repository-card-dummy v-for="dummy in 25" :key="dummy.id" />
+          </div>
         </div>
       </v-touch>
     </div>
@@ -14,11 +19,13 @@
 <script>
   import transition from '~/assets/page-transition'
   import appRepositoryCard from '~/components/app-repository-card'
+  import appRepositoryCardDummy from '~/components/app-repository-card-dummy'
   import appNav from '~/components/app-nav'
   export default {
     transition,
     components: {
       appRepositoryCard,
+      appRepositoryCardDummy,
       appNav
     },
     async created () {
