@@ -31,8 +31,10 @@
       if (repository) {
         this.$store.commit('SET_REPOSITORY', repository)
       } else {
-        const repository = await this.$store.dispatch('fetchRepository', {author, name})
-        const readme = await this.$store.dispatch('fetchReadMe', {author, name})
+        const [repository, readme] = await Promise.all([
+          this.$store.dispatch('fetchRepository', {author, name}),
+          this.$store.dispatch('fetchReadMe', {author, name})
+        ])
         this.$store.commit('PUSH_REPOSITORY', {author, name, repository, readme})
         this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
       }
