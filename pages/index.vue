@@ -39,7 +39,7 @@
     methods: {
       async onSwipeLeft () {
         const index = this.types.indexOf(this.type)
-        if (index + 1 <= this.types.length) {
+        if (index + 1 < this.types.length) {
           await this.onChangeType(this.types[index + 1])
         }
       },
