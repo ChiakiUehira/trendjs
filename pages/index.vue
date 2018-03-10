@@ -1,9 +1,11 @@
 <template>
   <div class="root">
     <div class="page-inner">
-      <div class="repositories">
-        <app-repository-card v-for="repository in trends" :key="repository.id" :repository="repository" />
-      </div>
+      <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight">
+        <div class="repositories">
+          <app-repository-card v-for="repository in trends" :key="repository.id" :repository="repository" />
+        </div>
+      </v-touch>
     </div>
     <app-nav @handleClick="onChangeType"/>
   </div>
@@ -28,13 +30,23 @@
       }
     },
     methods: {
+      async onSwipeLeft () {
+        const index = this.types.indexOf(this.type)
+        if (index + 1 <= this.types.length) {
+          await this.onChangeType(this.types[index + 1])
+        }
+      },
+      async onSwipeRight () {
+        const index = this.types.indexOf(this.type)
+        if (index - 1 >= 0) {
+          await this.onChangeType(this.types[index - 1])
+        }
+      },
       async onChangeType (type) {
         this.$store.commit('SET_TYPE', type)
-        if (this.hasRepository(type)){
-          return false
+        if (!this.hasRepository(type)){
+          await this.handleDispatch(type)
         }
-        await this.handleDispatch(type)
-        return true
       },
       async handleDispatch (type) {
         switch (type) {
@@ -79,6 +91,9 @@
       },
       type () {
         return this.$store.state.type
+      },
+      types () {
+        return this.$store.state.types
       },
       isDaily () {
         return this.type === 'daily'

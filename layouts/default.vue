@@ -1,9 +1,7 @@
 <template>
   <div class="app">
     <app-intro />
-    <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight">
-      <nuxt/>
-    </v-touch>
+    <nuxt/>
   </div>
 </template>
 
@@ -12,14 +10,6 @@ import appIntro from '~/components/app-intro'
 export default {
   components: {
     appIntro
-  },
-  methods: {
-    onSwipeLeft () {
-      this.$router.go(1)
-    },
-    onSwipeRight () {
-      this.$router.go(-1)
-    }
   },
 }
 </script>

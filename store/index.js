@@ -7,7 +7,12 @@ export const state = () => ({
   repositories: [],
   repository: null,
   isLoading: true,
-  type: 'daily'
+  type: 'daily',
+  types: [
+    'daily',
+    'weekly',
+    'monthly'
+  ]
 })
 
 export const mutations = {
