@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-inner">
-      <v-touch @swipeleft="onSwipeLeft">
+      <v-touch @swiperight="onSwipeRight">
         <div class="div">
           <!-- {{repository.author}} / {{repository.name}} -->
         </div>
@@ -39,8 +39,8 @@
       this.$store.commit('SET_IS_LOADING', false)
     },
     methods: {
-      onSwipeLeft () {
-        this.$route.go(-1)
+      onSwipeRight () {
+        this.$router.go(-1)
       },
     },
     computed: {
