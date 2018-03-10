@@ -5,7 +5,9 @@
         {{title}}
       </div>
       <div class="discription">
-      {{discription}}
+        <span>
+          {{discription}}
+        </span>
       </div>
     </nuxt-link>
   </div>
@@ -50,6 +52,14 @@ export default {
 .discription {
   font-size: 12px;
   line-height: 1.5;
+}
+.discription {
+  overflow: hidden;
+}
+.discription span{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 </style>
 
