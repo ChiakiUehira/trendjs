@@ -3,10 +3,10 @@
     <div class="page-inner">
       <v-touch @swipeleft="onSwipeLeft">
         <div class="div">
-          {{repository.author}} / {{repository.name}}
+          <!-- {{repository.author}} / {{repository.name}} -->
         </div>
         <div class="discription">
-          {{repository.discription}}
+          <!-- {{repository.discription}} -->
         </div>
         <div v-html="readmeContent" class="markdown-body"></div>
       </v-touch>
