@@ -45,7 +45,7 @@ export default {
   color: #B5B5B5;
   font-size: 12px;
   font-weight: bold;
-  padding: 14px 0;
+  padding: 18px 0;
   cursor: pointer;
 }
 
