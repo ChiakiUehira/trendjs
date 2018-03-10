@@ -22,7 +22,7 @@ export default {
   computed: {
     type () {
       return this.$store.state.type
-    }
+    },
   }
 }
 </script>

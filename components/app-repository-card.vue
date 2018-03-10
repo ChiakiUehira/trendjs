@@ -27,7 +27,7 @@ export default {
     },
     discription () {
       return this.repository.discription
-    }
+    },
   }
 }
 </script>
@@ -55,6 +55,7 @@ export default {
 }
 .discription {
   overflow: hidden;
+  height: 36px;
 }
 .discription span{
   display: -webkit-box;
