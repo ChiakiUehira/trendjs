@@ -1,15 +1,13 @@
 <template>
-  <div class="repository-card">
-    <nuxt-link :to="href">
-      <div class="title">
-        {{title}}
-      </div>
-      <div class="discription">
-        <span>
-          {{discription}}
-        </span>
-      </div>
-    </nuxt-link>
+  <div class="repository-card" @click="handleClick(repository)">
+    <div class="title">
+      {{title}}
+    </div>
+    <div class="discription">
+      <span>
+        {{discription}}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -28,6 +26,11 @@ export default {
     discription () {
       return this.repository.discription
     },
+  },
+  methods: {
+    handleClick (repository) {
+      return this.$emit('handleClick', repository)
+    }
   }
 }
 </script>
@@ -37,12 +40,11 @@ export default {
   box-shadow: 0px 0px 4px 0px #d0d0d0;
   margin-bottom: 15px;
   border-radius: 5px;
-}
-.repository-card a {
   display: block;
   padding: 15px;
   color: #000;
   text-decoration: none;
+  cursor: pointer;
 }
 .title {
   font-weight: bold;

@@ -4,7 +4,7 @@
       <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight">
         <div class="repositories">
           <div v-if="trends.length">
-            <app-repository-card v-for="repository in trends" :key="repository.id" :repository="repository" />
+            <app-repository-card v-for="repository in trends" :key="repository.id" :repository="repository" @handleClick="show" />
           </div>
           <div v-else>
             <app-repository-card-dummy v-for="dummy in 25" :key="dummy.id" />
@@ -37,6 +37,22 @@
       }
     },
     methods: {
+      async show ({author, name}) {
+        const repository = this.repositories.find(repository => {
+          return repository.author === author && repository.name === name
+        })
+        if (repository) {
+          this.$store.commit('SET_REPOSITORY', repository)
+        } else {
+          const [repository, readme] = await Promise.all([
+            this.$store.dispatch('fetchRepository', {author, name}),
+            this.$store.dispatch('fetchReadMe', {author, name})
+          ])
+          this.$store.commit('PUSH_REPOSITORY', {author, name, repository, readme})
+          this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
+        }
+        this.$router.push(`${author}@${name}`)
+      },
       async onSwipeLeft () {
         const index = this.types.indexOf(this.type)
         if (index + 1 < this.types.length) {
