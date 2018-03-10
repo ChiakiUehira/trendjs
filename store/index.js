@@ -7,6 +7,7 @@ export const state = () => ({
   repositories: [],
   repository: null,
   isLoading: true,
+  type: 'daily'
 })
 
 export const mutations = {
@@ -24,6 +25,9 @@ export const mutations = {
   },
   SET_REPOSITORY (state, repository) {
     state.repository = repository
+  },
+  SET_TYPE (state, type) {
+    state.type = type
   },
   PUSH_REPOSITORY (state, repository) {
     state.repositories.push(repository)

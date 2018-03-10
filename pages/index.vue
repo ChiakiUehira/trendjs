@@ -5,16 +5,19 @@
         <app-repository-card v-for="repository in daily" :key="repository.id" :repository="repository" />
       </div>
     </div>
+    <app-nav />
   </div>
 </template>
 
 <script>
   import transition from '~/assets/page-transition'
   import appRepositoryCard from '~/components/app-repository-card'
+  import appNav from '~/components/app-nav'
   export default {
     transition,
     components: {
-      appRepositoryCard
+      appRepositoryCard,
+      appNav
     },
     async created () {
       if (!this.daily.length) {

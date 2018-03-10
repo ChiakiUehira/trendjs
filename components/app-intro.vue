@@ -27,6 +27,7 @@ export default {
   background: #fff;
   width: 100vw;
   height: 100vh;
+  z-index: 100;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s;

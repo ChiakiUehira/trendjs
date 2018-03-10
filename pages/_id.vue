@@ -1,6 +1,12 @@
 <template>
   <div>
     <div class="page-inner">
+      <div class="div">
+        {{repository.author}} / {{repository.name}}
+      </div>
+      <div class="discription">
+        {{repository.discription}}
+      </div>
       <div v-html="readmeContent" class="markdown-body"></div>
     </div>
   </div>
