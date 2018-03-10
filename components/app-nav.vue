@@ -16,7 +16,7 @@
 export default {
   methods: {
     handleClick (type) {
-      return this.$store.commit('SET_TYPE', type)
+      return this.$emit('handleClick', type)
     }
   },
   computed: {
