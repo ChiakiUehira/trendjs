@@ -22,6 +22,11 @@
   import appRepositoryCardDummy from '~/components/app-repository-card-dummy'
   import appNav from '~/components/app-nav'
   export default {
+    data () {
+      return {
+        isSending : false
+      }
+    },
     transition,
     components: {
       appRepositoryCard,
@@ -38,20 +43,23 @@
     },
     methods: {
       async show ({author, name}) {
-        const repository = this.repositories.find(repository => {
-          return repository.author === author && repository.name === name
-        })
-        if (repository) {
-          this.$store.commit('SET_REPOSITORY', repository)
-        } else {
-          const [repository, readme] = await Promise.all([
-            this.$store.dispatch('fetchRepository', {author, name}),
-            this.$store.dispatch('fetchReadMe', {author, name})
-          ])
-          this.$store.commit('PUSH_REPOSITORY', {author, name, repository, readme})
-          this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
+        if (!this.isSending) {
+          const repository = this.repositories.find(repository => {
+            return repository.author === author && repository.name === name
+          })
+          if (repository) {
+            this.$store.commit('SET_REPOSITORY', repository)
+          } else {
+            const [repository, readme] = await Promise.all([
+              this.$store.dispatch('fetchRepository', {author, name}),
+              this.$store.dispatch('fetchReadMe', {author, name})
+            ])
+            this.$store.commit('PUSH_REPOSITORY', {author, name, repository, readme})
+            this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
+          }
+          this.isSending = true
+          this.$router.push(`${author}@${name}`)
         }
-        this.$router.push(`${author}@${name}`)
       },
       async onSwipeLeft () {
         const index = this.types.indexOf(this.type)

@@ -23,7 +23,22 @@
   export default {
     transition,
     async created () {
-      this.$store.commit('SET_IS_LOADING', false)
+      const { id } = this.$route.params
+      const [author, name] = id.split('@')
+      const repository = this.repositories.find(repository => {
+        return repository.author === author && repository.name === name
+      })
+      if (repository) {
+        this.$store.commit('SET_REPOSITORY', repository)
+      } else {
+        const [repository, readme] = await Promise.all([
+          this.$store.dispatch('fetchRepository', {author, name}),
+          this.$store.dispatch('fetchReadMe', {author, name})
+        ])
+        this.$store.commit('PUSH_REPOSITORY', {author, name, repository, readme})
+        this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
+      }
+       this.$store.commit('SET_IS_LOADING', false)
     },
     methods: {
       onSwipeRight () {
