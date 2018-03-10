@@ -26,10 +26,14 @@ export default {
 }
 .title {
   width: 50%;
-  height: 12px;
-  background: #eee;
+  height: 11px;
   border-radius: 10px;
   margin-bottom: 10px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(207, 216, 220, 0.2)), color-stop(rgba(207, 216, 220, 0.4)), to(rgba(207, 216, 220, 0.2)));
+  background: -webkit-linear-gradient(left, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+  background: linear-gradient(90deg, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+  animation: loading 1.4s ease infinite;
+  background-size: 600% 600%;
 }
 .discription {
   font-size: 12px;
@@ -38,13 +42,24 @@ export default {
 
 .discription span {
   display: block;
-  height: 10.25px;
+  height: 10.7px;
   width: 100%;
-  background: #eee;
   border-radius: 5px;
+  background: linear-gradient(90deg, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+  animation: loading 1.4s ease infinite;
+  background-size: 600% 600%;
 }
 .discription span:not(:last-child) {
   margin-bottom: 5px;
+}
+@keyframes loading {
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 </style>
 
