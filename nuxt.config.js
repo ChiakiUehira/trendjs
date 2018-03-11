@@ -64,6 +64,17 @@ module.exports = {
             maxAgeSeconds: 60 * 60,
           },
         },
+      },
+      {
+        urlPattern: 'https://api.github.com/repos/.*',
+        handler: 'networkFirst',
+        method: 'GET',
+        options: {
+          cacheName: 'repos',
+          cacheExpiration: {
+            maxAgeSeconds: 60 * 60 * 60,
+          },
+        },
       }
     ]
   },
