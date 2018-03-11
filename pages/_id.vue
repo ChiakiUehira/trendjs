@@ -10,9 +10,9 @@
         </div>
         <div v-html="readmeContent" class="markdown-body"></div>
       </v-touch>
-      <div class="link">
-        REPOSITORY
-      </div>
+      <a class="link" :href="toLink" target="_blank">
+        GITHUB
+      </a>
     </div>
   </div>
 </template>
@@ -50,6 +50,9 @@
       },
     },
     computed: {
+      toLink () {
+        return `https://github.com/${this.author}/${this.name}/`
+      },
       repositories () {
         return this.$store.state.repositories
       },
@@ -85,7 +88,7 @@
 }
 .description {
   font-weight: bold;
-  text-align: center;
+  line-height: 1.5;
   font-size: 14px;
   margin-bottom: 20px;
 }
@@ -98,6 +101,8 @@
   left: 0;
   padding: 10px;
   text-align: center;
+  display: block;
+  text-decoration: none;
 }
 .markdown-body video {
   width: 100%;
