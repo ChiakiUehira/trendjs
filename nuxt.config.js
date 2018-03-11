@@ -52,6 +52,21 @@ module.exports = {
     background_color: '#000',
     description: 'Provide JavaScript trends based on GitHub'
   },
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://us-central1-trendjs-4830c.cloudfunctions.net/trends/.*',
+        handler: 'networkFirst',
+        method: 'GET',
+        options: {
+          cacheName: 'trends',
+          cacheExpiration: {
+            maxAgeSeconds: 60 * 60,
+          },
+        },
+      }
+    ]
+  },
   plugins: [
     '~/plugins/touch.js'
   ],
