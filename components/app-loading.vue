@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-if="!isLoading" class="root">
+    <div v-if="isLoading" class="root">
       <div class="loader">
         <span></span>
       </div>
