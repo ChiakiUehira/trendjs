@@ -6,7 +6,8 @@ export const state = () => ({
   monthly: [],
   repositories: [],
   repository: null,
-  isLoading: true,
+  isOpening: true,
+  isLoading: false,
   type: 'daily',
   types: [
     'daily',
@@ -16,6 +17,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  SET_IS_OPENING (state, flag) {
+    state.isOpening = flag
+  },
   SET_IS_LOADING (state, flag) {
     state.isLoading = flag
   },

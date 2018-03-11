@@ -38,7 +38,8 @@
         this.$store.commit('PUSH_REPOSITORY', {author, name, repository, readme})
         this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
       }
-       this.$store.commit('SET_IS_LOADING', false)
+      this.$store.commit('SET_IS_LOADING', false)
+      this.$store.commit('SET_IS_OPENING', false)
     },
     methods: {
       onSwipeRight () {

@@ -37,13 +37,14 @@
       if (!this.repositories.length) {
         await this.$store.dispatch('fetchDaily')
       }
-      if (this.isLoading) {
-        this.$store.commit('SET_IS_LOADING', false)
+      if (this.isOpening) {
+        this.$store.commit('SET_IS_OPENING', false)
       }
     },
     methods: {
       async show ({author, name}) {
         if (!this.isSending) {
+          this.$store.commit('SET_IS_LOADING', true)
           const repository = this.repositories.find(repository => {
             return repository.author === author && repository.name === name
           })
@@ -135,8 +136,8 @@
       isMonthly () {
         return this.type === 'monthly'
       },
-      isLoading () {
-        return this.$store.state.isLoading
+      isOpening () {
+        return this.$store.state.isOpening
       },
     }
   }

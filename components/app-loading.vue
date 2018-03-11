@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-if="isOpening" class="root">
+    <div v-if="isLoading" class="root">
       <div class="logo">
         <img src="/logo.svg">
       </div>
@@ -11,8 +11,8 @@
 <script>
 export default {
   computed: {
-    isOpening () {
-      return this.$store.state.isOpening
+    isLoading () {
+      return this.$store.state.isLoading
     }
   }
 }

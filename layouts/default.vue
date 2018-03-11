@@ -1,15 +1,18 @@
 <template>
   <div class="app">
     <app-intro />
+    <app-loading />
     <nuxt/>
   </div>
 </template>
 
 <script>
 import appIntro from '~/components/app-intro'
+import appLoading from '~/components/app-loading'
 export default {
   components: {
-    appIntro
+    appIntro,
+    appLoading
   },
 }
 </script>
