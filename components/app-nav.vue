@@ -75,7 +75,7 @@
   }
   .bars span {
     width: 30px;
-    height: 1px;
+    height: 2px;
     display: block;
     background: #fff;
     position: absolute;
