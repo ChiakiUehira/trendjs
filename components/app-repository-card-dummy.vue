@@ -1,7 +1,7 @@
 <template>
   <div class="repository-card">
       <div class="title"></div>
-      <div class="discription">
+      <div class="description">
         <span></span>
         <span></span>
         <span></span>
@@ -35,12 +35,12 @@ export default {
   animation: loading 1.4s ease infinite;
   background-size: 600% 600%;
 }
-.discription {
+.description {
   font-size: 12px;
   line-height: 1.5;
 }
 
-.discription span {
+.description span {
   display: block;
   height: 10.7px;
   width: 100%;
@@ -49,7 +49,7 @@ export default {
   animation: loading 1.4s ease infinite;
   background-size: 600% 600%;
 }
-.discription span:not(:last-child) {
+.description span:not(:last-child) {
   margin-bottom: 5px;
 }
 @keyframes loading {

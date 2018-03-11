@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .app {
-  max-width: 600px;
+  max-width: 980px;
   margin: 0 auto;
   background-color: #fff;
 }

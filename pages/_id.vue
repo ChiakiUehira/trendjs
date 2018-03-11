@@ -2,14 +2,17 @@
   <div>
     <div class="page-inner">
       <v-touch @swiperight="onSwipeRight">
-        <div class="div">
-          <!-- {{repository.author}} / {{repository.name}} -->
+        <div class="fullname">
+          {{author}} / {{name}}
         </div>
-        <div class="discription">
-          <!-- {{repository.discription}} -->
+        <div class="description">
+          {{description}}
         </div>
         <div v-html="readmeContent" class="markdown-body"></div>
       </v-touch>
+      <div class="link">
+        REPOSITORY
+      </div>
     </div>
   </div>
 </template>
@@ -43,7 +46,7 @@
     },
     methods: {
       onSwipeRight () {
-        this.$router.go(-1)
+        this.$router.push('/')
       },
     },
     computed: {
@@ -52,6 +55,15 @@
       },
       repository () {
         return this.$store.state.repository
+      },
+      author () {
+        return this.repository ? this.repository.author : ''
+      },
+      name () {
+        return this.repository ? this.repository.name : ''
+      },
+      description () {
+        return this.repository ? this.repository.repository.description : ''
       },
       readmeContent () {
         if (!this.repository) return ''
@@ -65,7 +77,39 @@
 </script>
 
 <style>
+.fullname {
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 80px;
+}
+.description {
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.link {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  text-align: center;
+}
 .markdown-body video {
   width: 100%;
 }
+.markdown-body {
+  font-size: 14px;
+}
 </style>
+
+<style scoped>
+.page-inner {
+  padding: 30px 20px 60px;
+}
+</style>
+

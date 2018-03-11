@@ -37,7 +37,7 @@
       appNav
     },
     async created () {
-      if (!this.repositories.length) {
+      if (!this.trends.length) {
         await this.$store.dispatch('fetchDaily')
       }
       if (this.isOpening) {

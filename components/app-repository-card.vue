@@ -3,9 +3,9 @@
     <div class="title">
       {{title}}
     </div>
-    <div class="discription">
+    <div class="description">
       <span>
-        {{discription}}
+        {{description}}
       </span>
     </div>
   </div>
@@ -23,8 +23,8 @@ export default {
     title () {
       return `${this.repository.author} / ${this.repository.name}`
     },
-    discription () {
-      return this.repository.discription
+    description () {
+      return this.repository.description
     },
   },
   methods: {
@@ -51,15 +51,15 @@ export default {
   font-size: 14px;
   margin-bottom: 10px;
 }
-.discription {
+.description {
   font-size: 12px;
   line-height: 1.5;
 }
-.discription {
+.description {
   overflow: hidden;
   height: 36px;
 }
-.discription span{
+.description span{
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
