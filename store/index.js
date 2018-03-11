@@ -8,6 +8,7 @@ export const state = () => ({
   repository: null,
   isOpening: true,
   isLoading: false,
+  isOpen: false,
   type: 'daily',
   types: [
     'daily',
@@ -17,6 +18,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  SET_IS_OPEN (state, flag) {
+    state.isOpen = flag
+  },
   SET_IS_OPENING (state, flag) {
     state.isOpening = flag
   },

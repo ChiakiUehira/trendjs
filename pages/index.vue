@@ -1,6 +1,7 @@
 <template>
   <div class="root">
     <div class="page-inner">
+      <app-menu />
       <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight">
         <div class="repositories">
           <div v-if="trends.length">
@@ -18,6 +19,7 @@
 
 <script>
   import transition from '~/assets/page-transition'
+  import appMenu from '~/components/app-menu'
   import appRepositoryCard from '~/components/app-repository-card'
   import appRepositoryCardDummy from '~/components/app-repository-card-dummy'
   import appNav from '~/components/app-nav'
@@ -29,6 +31,7 @@
     },
     transition,
     components: {
+      appMenu,
       appRepositoryCard,
       appRepositoryCardDummy,
       appNav
@@ -145,7 +148,7 @@
 
 <style scoped>
 .repositories {
-  padding: 60px 0;
+  padding: 30px 0 60px;
 }
 </style>
 
