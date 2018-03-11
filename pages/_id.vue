@@ -80,6 +80,18 @@
 </script>
 
 <style>
+.markdown-body video {
+  width: 100%;
+}
+.markdown-body {
+  font-size: 14px;
+}
+</style>
+
+<style scoped>
+.page-inner {
+  padding: 80px 20px;
+}
 .fullname {
   font-weight: bold;
   text-align: center;
@@ -99,22 +111,10 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 10px;
+  padding: 18px 10px;
   text-align: center;
   display: block;
   text-decoration: none;
-}
-.markdown-body video {
-  width: 100%;
-}
-.markdown-body {
-  font-size: 14px;
-}
-</style>
-
-<style scoped>
-.page-inner {
-  padding: 30px 20px 60px;
 }
 </style>
 
