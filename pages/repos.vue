@@ -158,10 +158,12 @@
   text-align: center;
   display: block;
   text-decoration: none;
-  border-top: 1px solid #eaeaea;
   min-width : 51px;
   background: #000;
   color: #fff;
+}
+.back img {
+  vertical-align: middle;
 }
 </style>
 
