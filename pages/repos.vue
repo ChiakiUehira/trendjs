@@ -24,7 +24,6 @@
           GITHUB
         </a>
       </div>
-
     </div>
   </div>
 </template>
