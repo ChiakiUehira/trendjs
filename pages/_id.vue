@@ -5,10 +5,10 @@
         <div class="fullname">
           {{author}} / {{name}}
         </div>
-        <div class="description">
+        <div class="description" v-if="description">
           {{description}}
         </div>
-        <div class="homepage">
+        <div class="homepage" v-if="homepage">
           <a :href="homepage" target="_blank">
             <img src="/link-icon.svg" alt="">
             {{homepage}}

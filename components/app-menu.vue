@@ -1,6 +1,8 @@
 <template>
   <div v-if="isOpen" class="menu">
-
+    <div class="logo">
+      <img src="/logo.svg">
+    </div>
   </div>
 </template>
 
