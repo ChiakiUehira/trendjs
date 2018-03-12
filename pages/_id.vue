@@ -8,6 +8,23 @@
         <div class="description">
           {{description}}
         </div>
+        <div class="homepage">
+          <a :href="homepage" target="_blank">
+            <img src="/link-icon.svg" alt="">
+            {{homepage}}
+          </a>
+        </div>
+        <!-- <div class="actions">
+          <div class="action">
+            {{watchers}}
+          </div>
+          <div class="action">
+            {{stargazers}}
+          </div>
+          <div class="action">
+            {{forks}}
+          </div>
+        </div> -->
         <div v-html="readmeContent" class="markdown-body"></div>
       </v-touch>
       <a class="link" :href="toLink" target="_blank">
@@ -68,6 +85,18 @@
       description () {
         return this.repository ? this.repository.repository.description : ''
       },
+      homepage () {
+        return this.repository ? this.repository.repository.homepage : ''
+      },
+      forks () {
+        return this.repository ? this.repository.repository.forks : ''
+      },
+      watchers () {
+        return this.repository ? this.repository.repository.watchers : ''
+      },
+      stargazers () {
+        return this.repository ? this.repository.repository.stargazers_count : ''
+      },
       readmeContent () {
         if (!this.repository) return ''
         const bytes = base64.decode(this.repository.readme.content)
@@ -103,6 +132,12 @@
   line-height: 1.5;
   font-size: 14px;
   margin-bottom: 20px;
+}
+.homepage {
+  margin-bottom: 50px;
+}
+.homepage a {
+  color: #000;
 }
 .link {
   background: #fff;
