@@ -15,6 +15,9 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-115440722-1'
+    }]
   ],
   head: {
     title: 'Trend.js',
