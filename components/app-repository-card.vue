@@ -18,7 +18,7 @@ export default {
   ],
   computed: {
     href () {
-      return `${this.repository.author}@${this.repository.name}`
+      return `/repos?q=${this.repository.author}@${this.repository.name}`
     },
     title () {
       return `${this.repository.author} / ${this.repository.name}`

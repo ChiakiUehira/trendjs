@@ -62,7 +62,7 @@
             this.$store.commit('SET_REPOSITORY', {author, name, repository, readme})
           }
           this.isSending = true
-          this.$router.push(`${author}@${name}`)
+          this.$router.push(`/repos?q=${author}@${name}`)
         }
       },
       async onSwipeLeft () {

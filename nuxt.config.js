@@ -78,6 +78,9 @@ module.exports = {
       }
     ]
   },
+  generate: {
+    fallback: true,
+  },
   plugins: [
     '~/plugins/touch.js'
   ],

@@ -38,8 +38,8 @@
   export default {
     transition,
     async created () {
-      const { id } = this.$route.params
-      const [author, name] = id.split('@')
+      const { q } = this.$route.query
+      const [author, name] = q.split('@')
       const repository = this.repositories.find(repository => {
         return repository.author === author && repository.name === name
       })
