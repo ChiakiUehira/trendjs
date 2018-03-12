@@ -105,8 +105,8 @@
   margin-bottom: 20px;
 }
 .link {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -115,6 +115,7 @@
   text-align: center;
   display: block;
   text-decoration: none;
+  border-top: 1px solid #eaeaea;
 }
 </style>
 
