@@ -9,9 +9,6 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
   },
   css: [
     'github-markdown-css/github-markdown.css'
@@ -23,17 +20,17 @@ module.exports = {
     title: 'Trend.js',
     meta: [
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '' },
+      { name: 'twitter:site', content: 'https://trendjs.net' },
       { name: 'twitter:title', content: 'Trend.js' },
       { name: 'twitter:description', content: 'Provide JavaScript trends based on GitHub' },
-      { name: 'twitter:image', content: '' },
+      { name: 'twitter:image', content: 'https://trendjs.net/card.png' },
       { name: 'twitter:image:alt', content: 'Trend.js Logo' },
 
       { name: 'og:title', content: 'Trend.js' },
       { name: 'og:description', content: 'Provide JavaScript trends based on GitHub' },
       { name: 'og:type', content: 'website' },
-      { name: 'og:url', content: '' },
-      { name: 'og:image', content: '' }
+      { name: 'og:url', content: 'https://trendjs.net' },
+      { name: 'og:image', content: 'https://trendjs.net/card.png' }
     ],
   },
   meta: {
