@@ -14,22 +14,17 @@
             {{homepage}}
           </a>
         </div>
-        <!-- <div class="actions">
-          <div class="action">
-            {{watchers}}
-          </div>
-          <div class="action">
-            {{stargazers}}
-          </div>
-          <div class="action">
-            {{forks}}
-          </div>
-        </div> -->
-        <div v-html="readmeContent" class="markdown-body"></div>
+      <div v-html="readmeContent" class="markdown-body"></div>
       </v-touch>
-      <a class="link" :href="toLink" target="_blank">
-        GITHUB
-      </a>
+      <div class="menu">
+        <nuxt-link class="back" to="/">
+          <img src="/back.svg" alt="">
+        </nuxt-link>
+        <a class="github" :href="toLink" target="_blank">
+          GITHUB
+        </a>
+      </div>
+
     </div>
   </div>
 </template>
@@ -139,18 +134,34 @@
 .homepage a {
   color: #000;
 }
-.link {
+.menu {
   background: #fff;
-  color: #000;
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+}
+.github {
   padding: 18px 10px;
   text-align: center;
   display: block;
   text-decoration: none;
+  width: 100%;
+  color: #000;
+  font-weight: bold;
+  font-size: 12px;
+}
+.back {
+  padding: 15px 10px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
   border-top: 1px solid #eaeaea;
+  min-width : 51px;
+  background: #000;
+  color: #fff;
 }
 </style>
 
