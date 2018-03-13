@@ -50,6 +50,7 @@
     width: 100%;
     display: flex;
     border-top: #EAEAEA solid 1px;
+    z-index: 11;
   }
 
   .nav .item {
