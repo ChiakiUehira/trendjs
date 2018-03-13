@@ -18,6 +18,7 @@
       <!-- </v-touch> -->
       <div class="menu">
         <a class="github" :href="toLink" target="_blank">
+          <img src="/link-icon.svg" alt="">
           GITHUB
         </a>
         <nuxt-link class="back" to="/">
