@@ -1,5 +1,6 @@
 <template>
   <div class="repository-card" @click="handleClick(repository)">
+    <div v-if="isActive" class="active"></div>
     <div class="title">
       {{title}}
     </div>
@@ -26,6 +27,11 @@ export default {
     description () {
       return this.repository.description
     },
+    isActive () {
+      const key = `${this.repository.author}@${this.repository.name}`
+      const value = window.localStorage.getItem(key)
+      return !Boolean(value)
+    }
   },
   methods: {
     handleClick (repository) {
@@ -45,6 +51,16 @@ export default {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+  position: relative;
+}
+.active {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #e4e4e4;
 }
 .title {
   font-weight: bold;

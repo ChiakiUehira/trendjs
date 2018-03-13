@@ -10,11 +10,6 @@
         </div>
         <div class="links">
           <div class="link">
-            <nuxt-link to="/">
-              REPOSITORY
-            </nuxt-link>
-          </div>
-          <div class="link">
             <a href="https://github.com/pixelgram/trendjs" target="_blank">
               GITHUB
             </a>

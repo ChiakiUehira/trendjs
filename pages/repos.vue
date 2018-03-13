@@ -54,6 +54,9 @@
       }
       this.$store.commit('SET_IS_LOADING', false)
       this.$store.commit('SET_IS_OPENING', false)
+
+      const key = `${this.repository.author}@${this.repository.name}`
+      window.localStorage.setItem(key, true)
     },
     methods: {
       onSwipeRight () {
