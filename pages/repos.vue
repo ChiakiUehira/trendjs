@@ -17,12 +17,12 @@
       <div v-html="readmeContent" class="markdown-body"></div>
       <!-- </v-touch> -->
       <div class="menu">
-        <nuxt-link class="back" to="/">
-          <img src="/back.svg" alt="">
-        </nuxt-link>
         <a class="github" :href="toLink" target="_blank">
           GITHUB
         </a>
+        <nuxt-link class="back" to="/">
+          <img src="/back.svg" alt="">
+        </nuxt-link>
       </div>
     </div>
   </div>
