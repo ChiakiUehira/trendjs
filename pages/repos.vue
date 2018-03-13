@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-inner">
-      <v-touch @swiperight="onSwipeRight">
+      <!-- <v-touch @swiperight="onSwipeRight"> -->
         <div class="fullname">
           {{author}} / {{name}}
         </div>
@@ -15,7 +15,7 @@
           </a>
         </div>
       <div v-html="readmeContent" class="markdown-body"></div>
-      </v-touch>
+      <!-- </v-touch> -->
       <div class="menu">
         <nuxt-link class="back" to="/">
           <img src="/back.svg" alt="">
