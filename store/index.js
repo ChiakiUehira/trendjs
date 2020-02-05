@@ -49,15 +49,15 @@ export const mutations = {
 
 export const actions = {
   async fetchDaily ({commit}) {
-    const res = await axios.get('https://us-central1-trendjs-4830c.cloudfunctions.net/trends/')
+    const res = await axios.get('https://github-trending-api.now.sh/repositories?language=javascript&since=daily')
     commit('SET_DAILY', res.data)
   },
   async fetchWeekly ({commit}) {
-    const res = await axios.get('https://us-central1-trendjs-4830c.cloudfunctions.net/trends/?since=weekly')
+    const res = await axios.get('https://github-trending-api.now.sh/repositories?language=javascript&since=weekly')
     commit('SET_WEEKLY', res.data)
   },
   async fetchMonthly ({commit}) {
-    const res = await axios.get('https://us-central1-trendjs-4830c.cloudfunctions.net/trends/?since=monthly')
+    const res = await axios.get('https://github-trending-api.now.sh/repositories?language=javascript&since=monthly')
     commit('SET_MONTHLY', res.data)
   },
   async fetchRepository ({commit}, {author, name}) {

@@ -111,6 +111,7 @@
         if (this.isMonthly) {
           return this.monthly
         }
+        return this.daily
       },
       repositories () {
         return this.$store.state.repositories

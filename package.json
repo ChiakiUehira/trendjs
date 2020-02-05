@@ -14,23 +14,23 @@
     "deploy": "npm run generate && firebase deploy"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.0.2",
-    "@nuxtjs/pwa": "^2.0.8",
-    "axios": "^0.18.0",
+    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/pwa": "^2.6.0",
+    "axios": "^0.19.2",
     "base-64": "^0.1.0",
-    "github-markdown-css": "^2.10.0",
-    "jsdom": "^11.6.2",
-    "marked": "^0.3.17",
-    "nuxt": "^1.0.0",
-    "rss-parser": "^3.1.2",
+    "github-markdown-css": "^3.0.1",
+    "jsdom": "^16.1.0",
+    "marked": "^0.8.0",
+    "nuxt": "^2.11.0",
+    "rss-parser": "^3.7.5",
     "utf8": "^3.0.0",
     "vue-touch": "^2.0.0-beta.4"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-vue": "^6.1.2"
   }
 }
