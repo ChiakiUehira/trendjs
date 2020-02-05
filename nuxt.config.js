@@ -23,17 +23,17 @@ module.exports = {
     title: 'Trend.js',
     meta: [
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: 'https://trendjs.com' },
+      { name: 'twitter:site', content: 'trend-js.netlify.com' },
       { name: 'twitter:title', content: 'Trend.js' },
       { name: 'twitter:description', content: 'Provide JavaScript trends based on GitHub' },
-      { name: 'twitter:image', content: 'https://trendjs.com/card.png' },
+      { name: 'twitter:image', content: 'trend-js.netlify.com/card.png' },
       { name: 'twitter:image:alt', content: 'Trend.js Logo' },
 
       { name: 'og:title', content: 'Trend.js' },
       { name: 'og:description', content: 'Provide JavaScript trends based on GitHub' },
       { name: 'og:type', content: 'website' },
-      { name: 'og:url', content: 'https://trendjs.com' },
-      { name: 'og:image', content: 'https://trendjs.com/card.png' }
+      { name: 'og:url', content: 'trend-js.netlify.com' },
+      { name: 'og:image', content: 'trend-js.netlify.com/card.png' }
     ],
   },
   meta: {
