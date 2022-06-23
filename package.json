@@ -19,7 +19,7 @@
     "axios": "^0.19.2",
     "base-64": "^0.1.0",
     "github-markdown-css": "^3.0.1",
-    "jsdom": "^16.1.0",
+    "jsdom": "^16.5.0",
     "marked": "^0.8.0",
     "nuxt": "^2.11.0",
     "rss-parser": "^3.7.5",
